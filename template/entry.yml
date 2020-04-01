@@ -1,0 +1,66 @@
+# Schema version, do not modify
+schema: 1
+# Numberical identifier of this advisory.
+# Submitting an advisory? Leave this blank. It will be filled in when
+# published.
+id: 0001
+# A descriptive title of this advisory
+title: Descriptive CVE Title
+# What kind of vulnerability is this?
+# UNCATAGORIZED - You probably shouldn't use this
+# DOS - Denial of service
+# SQL_INJ - SQL injection
+# INFO_DISC - Information disclosure
+# PRIV_BYPASS - Priviledge bypass
+# PRIV_ESC - Priviledge escallation
+#
+# Have a vuln fit multiple classes? Separate them with a comma:
+#
+# class: PRIV_BYPASS,INFO_DISC
+class: UNCATAGORIZED
+# Day which this advisory is to be / was published in ISO 8601
+published: 2020-04-01
+description: |
+  This is the description of the problem.
+
+  Format this with Markdown or whatever.
+
+  It should talk about what's going on with this vulnerability - how does it 
+  happen, what conditions, the actual nature of the problem, stuff like that.
+remediation: |
+  If there is something the server administrator can do to mitigate the
+  problem. May be empty / non-existant if there is no way to remediate the
+  problem bar removing the offending software completely.
+
+project:
+  # What type of software is the project?
+  # SERVER - Bukkit / Sponge / Bungeecord / Velocity / etc...
+  # BUKKIT_PLUGIN - Bukkit plugin
+  # SPONGE_PLUGIN - Sponge plugin
+  # BUNGEECORD_PLUGIN - Bungeecord plugin
+  # VELOCITY_PLUGIN - Velocity plugin
+  # OTHER - Something else
+  type: SERVER
+  # Name of the affected software - if a plugin, choose the name of the plugin
+  # defined in its plugin meta definition. If server software, this should be
+  # the name of the widest server software which has this problem (i.e. if
+  # Paper has a vuln, but Spigot also has it, put Spigot here).
+  name: PluginName
+  plugin:
+    # If this is a plugin, fill this in with the main class of the plugin.
+    mainclass: some.example.MainClass
+  vuln:
+    # Versions where this vulnerability exists. If a plugin, this should match
+    # the version specified in the plugins meta
+    versions:
+    - "1.0.1"
+    - "1.0.2"
+    # Hashes of binaries where this vulnerability exists. sha256
+    hash:
+    - "f0e4c2f76c58916ec258f246851bea091d14d4247a2fc3e18694461b1816e13b"
+    - "2413fb3709b05939f04cf2e92f7d0897fc2596f9ad0b8a9ea855c7bfebaae892"
+  fixedin:
+    # What versions fixed this problem? May specify multiple if necessary.
+    versions:
+    - "1.0.3"
+
